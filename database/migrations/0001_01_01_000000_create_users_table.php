@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
+            $table->foreignIdFor(\App\Models\Entity::class)->nullable(); // This uses bigInteger which is the type of integer that increments. Used for IDs that are used in the database. This is used to reference the id of the entities table that we created in the database/migrations/2025_07_31_192448_create_entities_table.php file.
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

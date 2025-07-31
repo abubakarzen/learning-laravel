@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class); // A user belongs to an entity. This is used to reference the entity_id in the users table to the id in the entities table. This is used to get the entity of a user.
+    }
 }

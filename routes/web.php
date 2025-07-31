@@ -8,6 +8,11 @@ Route::get('/', function () {
     
     return view('home');
 });
+Route::get('/test', function () {
+    
+    return view('test');
+});
+
 Route::get('/jobs', function()  {
     return view("jobs", [
         'jobs' => Job::all()
